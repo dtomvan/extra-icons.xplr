@@ -1,13 +1,15 @@
-xplr plugin template
+icons.xplr
 ====================
 
-Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/writing-plugins.html).
+This plugin adds 100+ new icons to the xplr column view.
+
+![All icons included with icons.xplr](/example.png)
 
 
 Requirements
 ------------
 
-- Some tool
+- None
 
 
 Installation
@@ -26,26 +28,11 @@ Installation
   ```bash
   mkdir -p ~/.config/xplr/plugins
 
-  git clone https://github.com/me/{plugin}.xplr ~/.config/xplr/plugins/{plugin}
+  git clone https://github.com/dtomvan/icons.xplr ~/.config/xplr/plugins/icons
   ```
 
 - Require the module in `~/.config/xplr/init.lua`
 
   ```lua
-  require("{plugin}").setup()
-  
-  -- Or
-  
-  require("{plugin}").setup{
-    mode = "action",
-    key = ":",
-  }
-
-  -- Type `::` and enjoy.
+  require("icons").setup()
   ```
-
-
-Features
---------
-
-- Some cool feature
