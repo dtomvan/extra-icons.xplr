@@ -249,7 +249,7 @@ local icons = {
 local function setup()
     local xplr = xplr
 
-    xplr.fn.builtin.fmt_general_table_row_cols_1 = function(m)
+    xplr.fn.custom.icons_dtomvan_col_1 = function(m)
         local ext = m.relative_path:match("^.*%.(.*)$") or ""
         local icon = icons[m.relative_path] or icons[m.mime_essence] or icons[ext]
 

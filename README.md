@@ -31,8 +31,10 @@ Installation
   git clone https://github.com/dtomvan/icons.xplr ~/.config/xplr/plugins/icons
   ```
 
-- Require the module in `~/.config/xplr/init.lua`
+- Require the module in `~/.config/xplr/init.lua` and register it as the first
+  column:
 
   ```lua
   require("icons").setup()
+  xplr.config.general.table.row.cols[1] = { format = "custom.icons_dtomvan_col_1" }
   ```
