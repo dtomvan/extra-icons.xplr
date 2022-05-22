@@ -251,7 +251,13 @@ local function setup()
 
     xplr.fn.custom.icons_dtomvan_col_1 = function(m)
         local ext = m.relative_path:match("^.*%.(.*)$") or ""
-        local icon = icons[m.relative_path] or icons[m.mime_essence] or icons[ext]
+        local meta = xplr.config.node_types.special[m.relative_path] or xplr.config.node_types.extension[ext]
+
+        if type(meta) == "table" then
+            meta = meta.meta.icon
+        end
+
+        local icon = meta or icons[m.relative_path] or icons[m.mime_essence] or icons[ext]
 
         if type(icon) == "string" then
             m.meta.icon = icon

@@ -1,9 +1,15 @@
-icons.xplr
+extra-icons.xplr
 ====================
 
 This plugin adds 100+ new icons to the xplr column view.
 
-![All icons included with icons.xplr](/example.png)
+![Some icons included with extra-icons.xplr](/example.png)
+
+This adds to  https://github.com/prncss-xyz/icons.xplr.
+
+_NOTE: this plugin has been renamed: icons.xplr -> extra-icons.xplr to
+disambiguate between the two. This plugin is now also compatible with the
+other aforementioned plugin._
 
 
 Requirements
@@ -15,26 +21,19 @@ Requirements
 Installation
 ------------
 
-### Install manually
+### Using xpm.xplr
 
-- Add the following line in `~/.config/xplr/init.lua`
+- Use the installation instuctions from
+  [xpm](https://github.com/dtomvan/xpm.xplr) first.
 
+- Add the plugin to the list and register it as xplr's column renderer:
   ```lua
-  package.path = os.getenv("HOME") .. '/.config/xplr/plugins/?/src/init.lua'
-  ```
-
-- Clone the plugin
-
-  ```bash
-  mkdir -p ~/.config/xplr/plugins
-
-  git clone https://github.com/dtomvan/icons.xplr ~/.config/xplr/plugins/icons
-  ```
-
-- Require the module in `~/.config/xplr/init.lua` and register it as the first
-  column:
-
-  ```lua
-  require("icons").setup()
-  xplr.config.general.table.row.cols[1] = { format = "custom.icons_dtomvan_col_1" }
+  require('xpm').setup {
+    'dtomvan/xpm.xplr',
+    { 'dtomvan/extra-icons.xplr',
+        after = function()
+            xplr.config.general.table.row.cols[1] = { format = "custom.icons_dtomvan_col_1" }
+        end
+    },
+  }
   ```
