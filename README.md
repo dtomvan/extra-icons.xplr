@@ -32,7 +32,7 @@ Installation
     'dtomvan/xpm.xplr',
     { 'dtomvan/extra-icons.xplr',
         after = function()
-            xplr.config.general.table.row.cols[1] = { format = "custom.icons_dtomvan_col_1" }
+            xplr.config.general.table.row.cols[2] = { format = "custom.icons_dtomvan_col_1" }
         end
     },
   }
